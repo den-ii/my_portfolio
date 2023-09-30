@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Quicksand", "Trebuchet Ms", sans-serif;
+  /* overflow-x: hidden; */
+}
+html {
+  scroll-behavior: smooth;
+}
+.light {
+  background-color: #fefdfb;
+}
+.dark {
+  background-color: #1f1f1f;
+}
+.burger {
+  /* width: 36px; */
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* text-align: center; */
+  z-index: 100;
+}
+.burger-icon {
+  width: 25px;
+  height: 4px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.burger-icon::before,
+.burger-icon::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 4px;
+  border-radius: 10px;
+}
+.burger-icon::before {
+  transform: translateY(-8px);
+}
+.burger-icon::after {
+  transform: translateY(8px);
+}
+.nav-active .burger-icon {
+  transform: rotate(0.625turn);
+}
+.nav-active .burger-icon::before {
+  transform: rotate(90deg) translateX(0px);
+}
+.nav-active .burger-icon::after {
+  opacity: 0;
+}
+.mobile-nav__links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  /* justify-content: center; */
+  padding: 6rem 0 0 4rem;
+  transition: 0.2s;
+  /* align-items: center; */
+}
+.mobile-nav__links.nav-inactive {
+  transform: translateX(100%);
+}
+.mobile-nav__links.nav-active {
+  transform: translateX(20%);
+}
+.nav_burger-inactive {
+  display: none;
+}
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: -200px;
+  bottom: 0;
+  left: -200px;
+  width: 300%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  transform: translate3d(0px, 2px, 0) scale(0.9);
+  filter: blur(3px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+.proj {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+.gradient-text {
+  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 640px) {
+  .img {
+    display: none;
+  }
+}
