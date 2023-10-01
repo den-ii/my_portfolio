@@ -38,7 +38,7 @@ const Contact = () => {
           <input
             type="text"
             placeholder="john doe"
-            className="block w-full dark:bg-gray-100 border border-primary-100 focus:outline-2 focus:outline-secondary-100 rounded-lg mt-5 p-2 "
+            className="block w-full dark:border-dark-secondary dark:focus:outline-0 dark:text-gray-100 focus:outline-secondary-100 border border-primary-100 dark:bg-transparent focus:outline-secondary-100 rounded-lg mt-5 p-2 "
             {...register("name", {
               required: true,
               maxLength: 100,
@@ -53,7 +53,7 @@ const Contact = () => {
           <input
             type="text"
             placeholder="johndoe@gmail.com"
-            className="block w-full border dark:bg-gray-100 border-primary-100 focus:outline-2 focus:outline-secondary-100 rounded-lg mt-5 p-2 "
+            className="block w-full border border-primary-100 dark:border-dark-secondary dark:focus:outline-0 dark:text-gray-100 focus:outline-secondary-100 dark:bg-primary-100 focus:outline-secondary-100 rounded-lg mt-5 p-2 "
             {...register("email", {
               required: true,
               pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -68,7 +68,7 @@ const Contact = () => {
 
           <textarea
             placeholder="I want to hire you"
-            className="block w-full border dark:bg-gray-100 border-primary-100 focus:outline-2 focus:outline-secondary-100 rounded-lg mt-5 p-2 h-40 "
+            className="block w-full border border-primary-100 dark:bg-primary-100 dark:border-dark-secondary dark:focus:outline-0 dark:text-gray-100 focus:outline-secondary-100 dark:focus:outline-dark-secondary rounded-lg mt-5 p-2 h-40 "
             {...register("message", {
               required: true,
               maxLength: 2000,
