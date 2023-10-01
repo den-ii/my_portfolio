@@ -7,9 +7,9 @@ import Section from "../section";
 import { motion } from "framer-motion";
 const About = () => {
   return (
-    <section id="about" className="px-5 md:px-20 relative">
+    <section id="about" className="px-5 py-3 md:py-0 md:px-20 relative">
       <Section className="min-h-[100vh] flex flex-col  justify-center">
-        <div className="flex items-center text-3xl text-primary-100 dark:text-gray-100 justify-center font-bold gap-2">
+        <div className="flex items-center text-3xl my-5 md:my-0 text-primary-100 dark:text-gray-100 justify-center font-bold gap-2">
           <BsPersonBoundingBox size={34} className="dark:text-dark-secondary" />
           About Me
         </div>

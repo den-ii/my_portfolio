@@ -21,16 +21,6 @@ const Navbar = () => {
     ? "text-gray-100 font-bold"
     : "text-primary-100 font-bold";
 
-  if (isTopOfPage && !proj) {
-    navbarBg = "bg-primary-100 shadow";
-    fill = "text-gray-100";
-  } else {
-    navbarBg = "bg-gray-100 shadow";
-    fill = "text-primary-100";
-    navColor = "text-primary-100";
-    textColor = "text-primary-100 font-bold";
-  }
-
   const logo = "</>";
   const burgerClass = burger ? "nav-active" : "nav-inactive";
   const shadowClass = burger ? "" : "nav_burger-inactive";
@@ -39,8 +29,8 @@ const Navbar = () => {
   let burgerHandle;
   if (isTopOfPage && burger) {
     burgerHandle =
-      " bg-gray-100 before:bg-gray-100 after:bg-gray-100 dark:bg-dark-secondary before:dark:bg-dark-secondary after:dark:bg-dark-secondary";
-    dropdown = "bg-primary-100 dark:bg-primary-100 text-gray-100";
+      " bg-primary-100 before:bg-primary-100 after:bg-primary-100 dark:bg-dark-secondary before:dark:bg-dark-secondary after:dark:bg-dark-secondary";
+    dropdown = "bg-gray-100 dark:bg-primary-100 text-primary-100";
   } else if (!isTopOfPage && burger) {
     burgerHandle =
       "bg-primary-100 before:bg-primary-100 after:bg-primary-100 dark:bg-dark-secondary before:dark:bg-dark-secondary after:dark:bg-dark-secondary";
@@ -52,6 +42,19 @@ const Navbar = () => {
   } else if (!burger && !isTopOfPage) {
     burgerHandle =
       "bg-primary-100 before:bg-primary-100 after:bg-primary-100 dark:bg-gray-100 dark:before:bg-gray-100 dark:after:bg-gray-100";
+  }
+
+  if (isTopOfPage && !proj) {
+    navbarBg = "bg-primary-100 shadow";
+    fill = "text-gray-100";
+  } else {
+    navbarBg = "bg-gray-100 shadow";
+    fill = "text-primary-100";
+    navColor = "text-primary-100";
+    textColor = "text-primary-100 font-bold";
+    burgerHandle = burger
+      ? " bg-primary-100 before:bg-primary-100 after:bg-primary-100 dark:bg-dark-secondary before:dark:bg-dark-secondary after:dark:bg-dark-secondary"
+      : " bg-primary-100 before:bg-primary-100 after:bg-primary-100 dark:bg-gray-100 before:dark:bg-gray-100 after:dark:bg-gray-100";
   }
   useEffect(() => {
     const handleScroll = () => {
@@ -90,34 +93,35 @@ const Navbar = () => {
         </div>
         <div
           className={`w-[100vw] h-[100vh] fixed top-0 left-0 right-0 bg-gray-800 dark:bg-transparent dark:backdrop-blur opacity-30 ${shadowClass}`}
+          onClick={() => setBurger(false)}
         ></div>
         <div
-          className={`mobile-nav__links ${burgerClass} text-lg font-Poppins ${dropdown}`}
+          className={`mobile-nav__links text-bold ${burgerClass} text-lg font-Poppins ${dropdown} dark:text-gray-100`}
         >
           <Link
             to="/"
-            className="mb-3 mobile-nav__link"
+            className="mb-3 mobile-nav__link font-Poppins text-lg"
             onClick={() => setBurger(false)}
           >
             Home
           </Link>
           <Link
             to="/#about"
-            className="mb-3 mobile-nav__link"
+            className="mb-3 mobile-nav__link text-lg font-Poppins"
             onClick={() => setBurger(false)}
           >
             About
           </Link>
           <Link
             to="/#projects"
-            className="mb-3 mobile-nav__link"
+            className="mb-3 font-Poppins mobile-nav__link text-lg"
             onClick={() => setBurger(false)}
           >
-            About
+            My Projects
           </Link>
           <Link
             to="/#contact"
-            className="mb-3 mobile-nav__link"
+            className="mb-3 mobile-nav__link font-Poppins text-lg"
             onClick={() => setBurger(false)}
           >
             Contact Me

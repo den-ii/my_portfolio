@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [burger, setBurger] = useState(false);
   const text = darkMode ? "text-gray-100" : "bg-primary-100";
   const bg = darkMode ? "bg-primary-100" : "gray";

@@ -7,7 +7,10 @@ import Image from "./../image";
 
 const Projects = () => {
   return (
-    <Section id="projects" className="mt-16 px-5 md:px-20 min-h-[50vh]">
+    <Section
+      id="projects"
+      className="font-bold mt-16 px-5 md:px-20 min-h-[50vh]"
+    >
       <div className="flex items-center text-3xl text-primary-100 justify-center font-bold gap-2 dark:text-gray-100">
         <AiOutlineFundProjectionScreen
           size={34}

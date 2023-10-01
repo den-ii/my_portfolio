@@ -19,15 +19,21 @@ function Project() {
             />
           </a>
           <a
-            href={project[id.git]}
+            href={project[id].git}
             className="cursor-pointer hover:dark:text-dark-secondary"
           >
             <FaGithub size={25} />
           </a>
         </div>
-        <h1 className="text-center mt-5 text-lg">{project[id].name}</h1>
-        <div className="text-center mt-5">{project[id].tech2.join(", ")}</div>
-        <div className="text-center mt-5">{project[id].description}</div>
+        <h1 className="text-center font-bold mt-5 text-lg">
+          {project[id].name}
+        </h1>
+        <div className="text-center font-medium dark:font-normal mt-5">
+          {project[id].tech2.join(", ")}
+        </div>
+        <div className="text-center font-medium dark:font-normal mt-5">
+          {project[id].description}
+        </div>
       </div>
     </div>
   );
