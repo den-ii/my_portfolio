@@ -138,7 +138,7 @@ export const projects = [
   },
   {
     name: "WatchList",
-    link: "https://sweet-gecko-45be45.netlify.app",
+    link: "https://watchlist-deni.netlify.app",
     git: "https://github.com/juicio8/Movie-WatchList",
     image: "/project3.jpg",
     description:
